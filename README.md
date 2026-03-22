@@ -9,6 +9,8 @@ Hackaday profile: https://hackaday.io/sirsweater
 > This document establishes a public prior art record as of its publication
 > date. Patent applications covering features intentionally omitted from
 > this disclosure may be pending. All rights reserved.
+> **Notice:** This is a prior art disclosure document published for
+> defensive purposes only. It is not a patent application or legal filing.
 
 ---
 
@@ -30,6 +32,7 @@ The system is a general-purpose physical dice rolling utility applicable
 to any context where verifiable physical dice outcomes are preferred over
 software-generated randomness — tabletop games, board games, casino-style
 games, research, education, or any wagering context.
+
 
 ---
 
@@ -170,3 +173,5 @@ of this publication and elected to withhold it for patent protection.
 
 *ICANROLL PRIOR ART DISCLOSURE — Gregory Noel Kruger — March 2026*  
 *All rights reserved.*
+
+*Published for defensive prior art purposes only. Not a legal filing.*
