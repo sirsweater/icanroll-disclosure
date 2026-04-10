@@ -1,10 +1,10 @@
 # ICanRoll — Prior Art Disclosure
 
-**Physical Dice Rolling System with Authenticated Remote Photographic Delivery**
+**Physical Dice Rolling System with Authenticated Remote Photographic Delivery** **Official Project Site:** [https://icanroll.com](https://icanroll.com)
 
 Published for defensive purposes — March 2026  
 Gregory Noel Kruger — Denton, Texas  
-Hackaday profile: https://hackaday.io/sirsweater
+Hackaday profile: [https://hackaday.io/sirsweater](https://hackaday.io/sirsweater)
 
 > This document establishes a public prior art record as of its publication
 > date. Patent applications covering features intentionally omitted from
@@ -23,7 +23,8 @@ auditor's attestation.
 
 This system eliminates the need for trusted intermediaries by making the
 physical outcome directly observable by the end user. A photograph of a
-real die face requires no mathematical literacy to verify.
+real die face requires no mathematical literacy to verify. For a live 
+demonstration of this philosophy, see the implementation at **[icanroll.com](https://icanroll.com)**.
 
 > **The user is their own auditor. Everyone understands a dice roll
 > more than an algorithm.**
@@ -32,7 +33,6 @@ The system is a general-purpose physical dice rolling utility applicable
 to any context where verifiable physical dice outcomes are preferred over
 software-generated randomness — tabletop games, board games, casino-style
 games, research, education, or any wagering context.
-
 
 ---
 
@@ -47,7 +47,7 @@ The photo is the proof — no RNG, no algorithm, no intermediary required.
 
 Three-tier design:
 
-- **Client** — browser-based interface, any device
+- **Client** — browser-based interface, any device (Hosted at **icanroll.com**)
 - **Central API** — session management, authentication, worker routing
 - **Worker Node** — single-board computer controlling physical hardware:
   motor, camera, and LED illumination per dice container
@@ -63,13 +63,6 @@ Three-tier design:
 7. Photo is returned to the API, associated with the session token,
    and delivered to the user's browser
 8. User sees and verifies the physical result themselves
-
-### Dice Configuration
-
-The hardware accepts any physical dice. No hardware modification is required
-to change dice type or quantity. The software reflects whatever is loaded.
-Reference implementation uses standard polyhedral dice: D4, D6, D8, D10,
-D12, D20, D100.
 
 ---
 
@@ -163,15 +156,14 @@ of this publication and elected to withhold it for patent protection.
 
 ## Publication Record
 
-- **GitHub:** https://github.com/sirsweater/icanroll-disclosure — March 2026
-- **Hackaday.io profile:** https://hackaday.io/sirsweater
-- **Hackaday.io project:** [will add after creator approval]
-- **Archive.org snapshot of GitHub:** [will add after archiving]
-- **Archive.org snapshot of Hackaday:** [will add after Hackaday publishes]
+- **Official Website:** [https://icanroll.com](https://icanroll.com)
+- **GitHub Repository:** [https://github.com/sirsweater/icanroll-disclosure](https://github.com/sirsweater/icanroll-disclosure)
+- **Hackaday.io profile:** [https://hackaday.io/sirsweater](https://hackaday.io/sirsweater)
+- **Hackaday.io project:** [Link pending creator approval]
+- **Archive.org snapshot:** [Link pending archival]
 
 ---
 
-*ICANROLL PRIOR ART DISCLOSURE — Gregory Noel Kruger — March 2026*  
-*All rights reserved.*
+*ICANROLL PRIOR ART DISCLOSURE — Gregory Noel Kruger — March 2026* *Documentation and live system: [https://icanroll.com](https://icanroll.com)* *All rights reserved.*
 
 *Published for defensive prior art purposes only. Not a legal filing.*
