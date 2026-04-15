@@ -1,3 +1,5 @@
+<meta name="google-site-verification" content="FJFYBujd46C7wAsfiv2FdPwkGCF7mLnE2pCaPZQYoig" />
+
 # ICanRoll: Verifiable Physical Randomness Platform
 **Created by Gregory Noel Kruger (sirsweater)**
 
