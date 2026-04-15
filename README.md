@@ -1,169 +1,62 @@
-# ICanRoll — Prior Art Disclosure
+# ICanRoll: Verifiable Physical Randomness Platform
+**Created by Gregory Noel Kruger (sirsweater)**
 
-**Physical Dice Rolling System with Authenticated Remote Photographic Delivery** **Official Project Site:** [https://icanroll.com](https://icanroll.com)
+### [Public Disclosure & Project Showcase]
 
-Published for defensive purposes — March 2026  
-Gregory Noel Kruger — Denton, Texas  
-Hackaday profile: [https://hackaday.io/sirsweater](https://hackaday.io/sirsweater)
-
-> This document establishes a public prior art record as of its publication
-> date. Patent applications covering features intentionally omitted from
-> this disclosure may be pending. All rights reserved.
-> **Notice:** This is a prior art disclosure document published for
-> defensive purposes only. It is not a patent application or legal filing.
+ICanRoll is a physical dice-rolling system built to ensure honesty in remote gaming. Instead of relying on hidden computer code to "generate" a number, ICanRoll uses real-world physics and live visual evidence so you can see the result for yourself.
 
 ---
 
-## The Problem
-
-Existing remote dice and gaming systems require users to trust either a
-regulatory body's certification of a random number generator, a
-cryptographic proof they cannot personally verify, or a third-party
-auditor's attestation.
-
-This system eliminates the need for trusted intermediaries by making the
-physical outcome directly observable by the end user. A photograph of a
-real die face requires no mathematical literacy to verify. For a live 
-demonstration of this philosophy, see the implementation at **[icanroll.com](https://icanroll.com)**.
-
-> **The user is their own auditor. Everyone understands a dice roll
-> more than an algorithm.**
-
-The system is a general-purpose physical dice rolling utility applicable
-to any context where verifiable physical dice outcomes are preferred over
-software-generated randomness — tabletop games, board games, casino-style
-games, research, education, or any wagering context.
+## See It In Action
+[![ICanRoll Demonstration](https://img.youtube.com/vi/iyxTpk87CFc/0.jpg)](https://www.youtube.com/shorts/iyxTpk87CFc)
+*Demonstration of the ICanRoll interface, showing the physical dice agitation and the verified result.*
 
 ---
 
-## What It Is
+## Why You Can Trust ICanRoll
 
-A motorized physical dice roller connected to the internet. A motor shakes
-real dice in a container. A camera photographs the result. The photograph
-is delivered to remote users over the internet via an authenticated session.
-The photo is the proof — no RNG, no algorithm, no intermediary required.
+The problem with most gaming apps is that you can't see how the number was picked. ICanRoll makes the entire process visible and verifiable through a complete chain of evidence for your roll.
 
-### System Architecture
+### 1. The Physical Kick
+We don't use a computer program to choose a number. We use a mechanical agitator—a physical plunger—to kick the dice inside a chamber. The result is determined by the same laws of physics as a roll at a physical table.
 
-Three-tier design:
+### 2. Full-Motion Video
+As the agitator kicks the dice, the system captures a video of them in motion. You see the dice bouncing and settling in real-time. This ensures that the transition from shaking to landing is completely transparent and nothing is hidden.
 
-- **Client** — browser-based interface, any device (Hosted at **icanroll.com**)
-- **Central API** — session management, authentication, worker routing
-- **Worker Node** — single-board computer controlling physical hardware:
-  motor, camera, and LED illumination per dice container
+### 3. The Final Photo Receipt
+The moment the dice come to a complete rest, our camera captures a high-resolution photo. This serves as your official receipt. By providing both a video of the action and a photo of the result, ICanRoll proves the roll is authentic.
 
-### One Complete Roll
-
-1. User configures dice type and named players in the web interface
-2. User clicks Roll — a session token is created binding all data to them
-3. API routes the request to the worker node matching the dice configuration
-4. If hardware is in use the request queues automatically
-5. Worker motor agitates the container until dice randomize and settle
-6. LED illuminates, camera captures a still photograph
-7. Photo is returned to the API, associated with the session token,
-   and delivered to the user's browser
-8. User sees and verifies the physical result themselves
+### 4. A Verified History
+Every roll is logged with its original video and photo. If there is ever a dispute about a result, you can pull up the visual record and the session data. This ensures a fair environment where every outcome is backed by physical evidence.
 
 ---
 
-## Key Features
+## The Engineering of Trust
 
-- **Authenticated photo delivery** — photos accessible only via valid
-  session token, not publicly accessible
-- **Named player sessions** — multi-participant support with round tracking
-- **Scratch / void system** — rolls marked void are preserved with reason,
-  never silently deleted
-- **PDF export** — complete session record with embedded photographs,
-  round structure, timestamps, and void stamps
-- **Session expiry** — idle timeout and hard maximum duration server-side
-- **Media grace period** — photos remain accessible after session end for
-  PDF download
-- **Badge encoding system** — portable 16-bit achievement codes using
-  XOR/multiply/salt/checksum scheme, no server-side storage required
-- **Worker heartbeat registration** — worker nodes self-register with the
-  API every 30 seconds; live hardware registry maintained automatically
-- **Up to 8 physical dice containers per worker node**
-- **Per-container independent hardware tuning** — shake speed, duration,
-  and settle time configurable per container to suit different dice types
+The ICanRoll system is designed to be a secure environment where the moment of randomness is always physical:
+
+* **Secured Hardware:** The physical agitation unit is isolated and dedicated solely to managing the mechanical kick and camera sequence.
+* **Synchronized Capture:** The system uses high-precision timing to coordinate the physical kick with the video and photo capture, ensuring a seamless record of the roll.
+* **Consistent Force:** Custom electronics ensure the agitator strikes with consistent, non-patterned force for a truly fair roll every time.
 
 ---
 
-## Claims of Novelty
+## Technical Disclosure (Prior Art)
 
-The following combinations are believed to be novel as of March 2026:
+**Author:** Gregory Noel Kruger  
+**Project:** ICanRoll Physical Dice-Rolling System  
 
-- Physical motorized dice actuation combined with photographic capture
-  delivered as an authenticated record to remote users — as a unified system
-- User as their own auditor — no mathematical literacy, cryptographic
-  knowledge, or trusted third party required to verify the result
-- Configuration-aware worker routing — API matches requests to worker nodes
-  by the physical dice configuration currently loaded
-- Per-container hardware queue management via threading lock — sequential
-  roll processing without user retry
-- Session token ownership model — all roll data bound to the initiating
-  user's token; accessible only to them
-- Multi-modal verification — still photograph now, video of full actuation
-  event as a designed future capability
-- Session-linked exportable audit trail — PDF with embedded photos and
-  complete roll record
-- Dice-agnostic physical hardware — any configuration, no hardware
-  modification required
-- Worker self-registration via 30-second heartbeat — live registry of all
-  available physical hardware without manual configuration
-- LED-synchronized camera capture — dedicated illumination per container
-  with configurable timing for consistent exposure
-- Up to 8 independent containers per worker node with fully independent
-  hardware assignments
+**Key Claims of the Invention:**
+* **Mechanical Agitation:** The use of a physical plunger to provide direct impact to dice for randomness.
+* **Dual-Media Verification:** A hardware pipeline that captures both video and photographic evidence of a physical event in a single synchronized sequence.
+* **Result Auditing:** A method for providing users with a verifiable visual chain of custody to ensure the integrity of remote physical events.
 
 ---
 
-## Prior Art Reviewed
-
-The following patents were reviewed and found not to conflict. Each is
-anchored to casino wagering infrastructure not present in this system.
-
-| Patent | Description | Conflict |
-|---|---|---|
-| US20230306815A1 | Casino player performance comparison | None |
-| US11887441B2 | Hybrid craps table with electronic displays | None |
-| US8758109 | Casino slow-motion camera replay at local stations | None |
-| US10535230 | Cryptographic provably fair RNG scheme | None |
-| US20200302744A1 | GPS-based betting on casino player performance | None |
-| Roulette aggregation sensing patent | Camera detects roulette outcomes for set-based wagering | None |
-
-None of the above claim the combination of physical dice actuation,
-camera-based photographic delivery, authenticated remote session
-management, and user-verifiable physical outcomes.
+### Links & Resources
+* **Official Site:** [icanroll.com](https://icanroll.com)
+* **Watch on YouTube:** [@icanrollwebsite](https://www.youtube.com/@icanrollwebsite)
+* **Developer Profile:** [sirsweater on GitHub](https://github.com/sirsweater)
 
 ---
-
-## Intentional Omissions
-
-**The following feature is intentionally omitted pending provisional
-patent filing:**
-
-Automated image-based extraction of dice face values from photographs
-and/or video frames — including any combination of computer vision,
-machine learning, or frame analysis used to suggest or confirm the
-numerical outcome of a physical dice roll. This feature and any
-combination of it with the pipeline described herein is not disclosed
-and is subject to a pending patent application.
-
-The inventor was aware of and had conceived this capability at the time
-of this publication and elected to withhold it for patent protection.
-
----
-
-## Publication Record
-
-- **Official Website:** [https://icanroll.com](https://icanroll.com)
-- **GitHub Repository:** [https://github.com/sirsweater/icanroll-disclosure](https://github.com/sirsweater/icanroll-disclosure)
-- **Hackaday.io profile:** [https://hackaday.io/sirsweater](https://hackaday.io/sirsweater)
-- **Hackaday.io project:** [Link pending creator approval]
-- **Archive.org snapshot:** [Link pending archival]
-
----
-
-*ICANROLL PRIOR ART DISCLOSURE — Gregory Noel Kruger — March 2026* *Documentation and live system: [https://icanroll.com](https://icanroll.com)* *All rights reserved.*
-
-*Published for defensive prior art purposes only. Not a legal filing.*
+© 2026 Gregory Noel Kruger. All Rights Reserved.
