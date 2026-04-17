@@ -10,7 +10,7 @@ ICanRoll is a physical dice-rolling system built to ensure honesty in remote gam
 ---
 
 ## See It In Action
-[![ICanRoll Demonstration](https://img.youtube.com/vi/iyxTpk87CFc/0.jpg)](https://www.youtube.com/shorts/iyxTpk87CFc)
+[![ICanRoll Demonstration](https://img.youtube.com/vi/GNaoQjN6opw/0.jpg)](https://www.youtube.com/shorts/GNaoQjN6opw)
 *Demonstration of the ICanRoll interface, showing the physical dice agitation and the verified result.*
 
 ---
